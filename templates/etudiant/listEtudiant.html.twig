@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+{% block content %}
+    <div class=' md:w-3/2  flex justify-center overflow-x-hidden'>
+        <div class='place-items-center items-center justify-center gap-x-32  grid grid-cols-3 gap-y-10   align-center pt-20'>
+            {% for user in Utilisateur %}
+                <a href='/etudiant/{{ user.getIdEtudiant }}'>
+                    <div class='rounded relative  bg-purple-600 w-32 h-16 flex text-center justify-center items-center'>
+                         {{user.getLogin}}
+
+                    </div>
+                    <div class="py-4">
+                        <form method='get'><input type='submit' name='user' value='Utilisateur_{{ user.getIdEtudiant }}' class='rounded  border-4 border-purple-600 w-32 h-16 flex text-center justify-center items-center'></form>
+                        <a href='/etudiant/{{ user.getIdEtudiant }}/del'></a>
+
+                        <form method='get'><input type='submit' name='id={{ user.getIdEtudiant }}' value='delete' class='rounded  border-4 border-purple-600 w-32 h-16 flex text-center justify-center items-center'></form>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock %}

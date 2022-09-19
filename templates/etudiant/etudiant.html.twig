@@ -1,0 +1,34 @@
+{% extends "base.html.twig" %}
+{% block content %} <h1>Inscription</h1>
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<br>
+<form class="container" method="post" action="/etudiant/add">
+
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"> login</label>
+        <input required="Le champ n'a pas été rempli" type="texte" class="form-control" name="pseudo">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Nom</label>
+        <input required="Le champ n'a pas été rempli" type="texte" class="form-control" name="lastname">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Prenom</label>
+        <input required="Le champ n'a pas été rempli" type="texte" class="form-control" name="Firstname">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input required="Le champ n'a pas été rempli" type="password" class="form-control" name="Password">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Email</label>
+        <input required="Le champ n'a pas été rempli" type="email" class="form-control" name="Email">
+    </div>
+
+    <button type="submit" class="btn btn-primary" name="validate">S'inscrire</button>
+    <br>
+
+    {% endblock %}
