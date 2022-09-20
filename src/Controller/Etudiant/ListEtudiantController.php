@@ -2,8 +2,9 @@
 
 namespace Quizz\Controller;
 
+use Quizz\Core\View\TwigCore;
 use Quizz\Model\EtudiantModel;
-use Quizz\Service\TwigService;
+
 
 class ListEtudiantController implements \Quizz\Core\Controller\ControllerInterface
 {
@@ -19,7 +20,7 @@ class ListEtudiantController implements \Quizz\Core\Controller\ControllerInterfa
         // TODO: Implement outputEvent() method.
         $user = new EtudiantModel();
         $tabUser = $user->getFetchAll();
-        $twig = TwigService::getEnvironment();
+        $twig = TwigCore::getEnvironment();
 
         if(isset($_GET['idUser'])){
             echo $twig->render('etudiant/listEtudiant.html.twig',[

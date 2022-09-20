@@ -3,7 +3,6 @@
 namespace Quizz\Controller;
 
 use Quizz\Model\EtudiantModel;
-use Quizz\Service\TwigService;
 
 class DeleteController implements \Quizz\Core\Controller\ControllerInterface
 {
